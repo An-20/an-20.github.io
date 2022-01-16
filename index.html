@@ -1,16 +1,148 @@
 <!DOCTYPE html>
-  <html>
-  <head>
-    <title>An-20 personal website</title>
-    <style>
-      body {
-        font-family: sans-serif;
-      }
-    </style>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An-20 Personal Website</title>
 
-  <body>
-  <h1>WIP website</h1>
-  <p>I'm hosted with GitHub Pages.</p>
-  </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manjari&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Manjari&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Manjari', sans-serif;
+      color: white;
+      background: #202020;
+      font-size: 25px;
+      margin: 0px;
+    }
+
+    section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 350px;
+      padding: 50px 20vw;
+      margin: 0px;
+    }
+
+    .blue1{
+      background: #0462aa;
+    }
+
+    .blue2{
+      background: #003b68;
+    }
+
+    .blue3{
+      background: #2a4457;
+    }
+
+    .blue4{
+      background: #385b74;
+    }
+
+    .blue5{
+      background: #1c6192;
+    }
+
+    .spacer{
+      aspect-ratio: 1000/300;
+      width: 100%;
+      margin: 0px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .transition1 {
+      background-image: url('./images/transition1-wide.svg');
+    }
+
+    #title-text{
+      font-family: 'Anonymous Pro', monospace;
+    }
+
+  </style>
+
+</head>
+<body onload="typeText()">
+
+  <section class="blue1">
+    <p id="title-text"></p>
+  </section>
+
+  <div class="spacer transition1"></div>
+
+  <section class="blue2">
+    <h1>Title</h1>
+    <p>At id qui aliquam tempora est earum soluta facere aspernatur provident vel! Similique atque nihil iure nulla quidem unde, placeat officiis optio maxime, beatae minima perferendis earum porro dicta reprehenderit.</p>
+  </section>
+
+  <section class="blue3">
+    <h1>Title</h1>
+    <p>Quasi sed dolor impedit, nisi debitis nobis iusto aperiam vitae ratione enim iure qui doloribus maxime, sapiente porro nulla similique eaque minima deserunt? Voluptatum doloremque molestiae nesciunt, fugit deleniti id.</p>
+  </section>
+
+  <section class="blue4">
+    <h1>Title</h1>
+    <p>Ipsa quibusdam maiores asperiores totam est obcaecati aliquid sequi! Ea ad cum ullam assumenda consequatur iste? Et, vitae recusandae? Facere non rem voluptatibus optio quam in laboriosam eius voluptatum tempora?</p>
+  </section>
+
+  <section class="blue5">
+    <h1>Title</h1>
+    <p>Totam porro iure aut. Exercitationem harum corrupti animi vitae accusamus architecto assumenda sapiente nihil maiores! Eum, soluta odit, totam vitae deleniti cum unde labore atque minus, a voluptatibus earum quasi.</p>
+  </section>
+
+</body>
+
+<script>
+
+  /* Yes I do know JS identifier names are supposed to be camelcase 
+  But I come from a mostly Python background so.... */
+
+  function typeText(){
+    var element = document.getElementById('title-text');
+    var char_idx = 0;
+    var lines = [
+      "Hello, I am An-20",
+      "Python programmer",
+      "Web developer",
+      "Secondary school student"
+    ];
+    var total_length = lines.join("").length + 1  // add one so cursor is on newline
+    var cursor_counter = 0;  // keep cursor on ofr only half of time
+
+    var typing_timer = setInterval(function() {
+      char_idx = Math.min(char_idx + 1, total_length);
+      cursor_counter = cursor_counter > 15 ? 0 : cursor_counter + 1
+
+      tmp_idx = 0;
+      text_to_put = "&#8250; "
+      for (var line_idx = 0; line_idx < lines.length; line_idx++){
+        if (tmp_idx + lines[line_idx].length< char_idx){
+          text_to_put += lines[line_idx]
+          text_to_put += "<br>&#8250; "
+          tmp_idx += lines[line_idx].length
+        }
+        else {
+          text_to_put += lines[line_idx].slice(0, char_idx - tmp_idx)
+          tmp_idx = char_idx
+        }
+        if (tmp_idx == char_idx){
+          break;
+        }
+      }
+
+      text_to_put += cursor_counter < 5 && char_idx == total_length ? "|" : ""
+
+      element.innerHTML = text_to_put;
+    }, 75)
+  }
+</script>
+
 </html>

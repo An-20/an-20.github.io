@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EH&S V3</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manjari&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Manjari&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <style>
+    html, body {
+      font-family: 'Manjari', sans-serif;
+      color: white;
+      background: #202020;
+      font-size: 25px;
+      margin: 0px;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+    }
+
+    section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 30px;
+      padding: 0px 20vw;
+      margin: 0px;
+    }
+
+    .bg1 {
+      background: #0462aa;
+      text-align: center;
+      flex: 1 1 auto;
+    }
+
+    .bg2 {
+      background: #b75300;
+    }
+
+    .spacer {
+      aspect-ratio: 1000/300;
+      width: 100%;
+      margin: 0px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      min-height: 50px;
+    }
+
+    .transition1 {
+      background-image: url('./images/transition-e1.svg');
+    }
+
+    .links {
+      font-family: 'Anonymous Pro', monospace;
+      text-align: center;
+    }
+
+    #map {
+      height: 90vh;
+      width: 90vw;
+
+      position: absolute;
+      top: 8vh;
+
+      border-radius: 10px;
+    }
+
+    h4 {
+      padding: 0px;
+    }
+
+  </style>
+
+</head>
+<body>
+  <section class="bg1">
+    <h4>Exeter H&S V3 Map</h4>
+    <div id="map"></div>
+  </section>
+
+  <div class="spacer transition1"></div>
+
+  <section class="bg2 links">
+  </section>
+</body>
+
+<script>
+  var map = L.map('map').setView([51.505, -0.09], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  L.marker([51.5, -0.09]).addTo(map)
+      .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+      .openPopup();
+
+    map.locate({setView: true, maxZoom: 16});
+</script>
+
+</html>

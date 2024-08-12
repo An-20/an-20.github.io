@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>An-20 Personal Website</title>
+  <title>An-20</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,29 +25,30 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 350px;
-      padding: 50px 20vw;
+      min-height: 100px;
+      padding: 10px 20vw;
       margin: 0px;
     }
 
-    .blue1{
+    .bg1{
       background: #0462aa;
+      text-align: center;
     }
 
-    .blue2{
+    .bg2{
       background: #003b68;
     }
 
-    .blue3{
-      background: #2a4457;
+    .bg3{
+      background: #b75300;
     }
 
-    .blue4{
-      background: #385b74;
+    .bg4{
+      background: #400f83;
     }
 
-    .blue5{
-      background: #1c6192;
+    .bg5{
+      background: #122138;
     }
 
     .spacer{
@@ -57,14 +58,59 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      min-height: 150px;
     }
 
     .transition1 {
       background-image: url('./images/transition1-wide.svg');
     }
 
+    .transition2 {
+      background-image: url('./images/transition2-wide.svg');
+    }
+
+    .transition3 {
+      background-image: url('./images/transition3-wide.svg');
+    }
+
+    .transition4 {
+      background-image: url('./images/transition4-wide.svg');
+    }
+
+    .links {
+      font-family: 'Anonymous Pro', monospace;
+      text-align: center;
+    }
+
     #title-text{
       font-family: 'Anonymous Pro', monospace;
+      text-align: left;
+    }
+
+    .notice {
+      font-family: 'Anonymous Pro', monospace;
+
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 10px;
+
+      animation: loadFadeInAnimation ease 3s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    .notice > a {
+      text-decoration: underline;
+      color: #81cfff;
+    }
+
+    @keyframes loadFadeInAnimation {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
     }
 
   </style>
@@ -72,38 +118,49 @@
 </head>
 <body onload="typeText()">
 
-  <section class="blue1">
+  <section class="bg1">
     <p id="title-text"></p>
+    <div class="notice">
+      Here for Exeter Hide and Seek V3? <br> Click <a href="exeter.html">here</a>.
+    </div>
   </section>
 
   <div class="spacer transition1"></div>
 
-  <section class="blue2">
-    <h1>Title</h1>
-    <p>At id qui aliquam tempora est earum soluta facere aspernatur provident vel! Similique atque nihil iure nulla quidem unde, placeat officiis optio maxime, beatae minima perferendis earum porro dicta reprehenderit.</p>
+  <section class="bg2">
+    <h1>Aureus</h1>
+    <p>An algorithmic trading bot, under development since 2019. Predicting the market is difficult.</p>
   </section>
 
-  <section class="blue3">
-    <h1>Title</h1>
-    <p>Quasi sed dolor impedit, nisi debitis nobis iusto aperiam vitae ratione enim iure qui doloribus maxime, sapiente porro nulla similique eaque minima deserunt? Voluptatum doloremque molestiae nesciunt, fugit deleniti id.</p>
+  <div class="spacer transition2"></div>
+
+  <section class="bg3">
+    <h1>Jybot</h1>
+    <p>An all-in-one Discord bot for all your bot needs, with a local knowledgebase, LLM chat, online searching, OCR, symbolic maths, and more.</p>
   </section>
 
-  <section class="blue4">
-    <h1>Title</h1>
+  <div class="spacer transition3"></div>
+
+  <section class="bg4">
+    <h1>lorem ipsum dolor lmao</h1>
     <p>Ipsa quibusdam maiores asperiores totam est obcaecati aliquid sequi! Ea ad cum ullam assumenda consequatur iste? Et, vitae recusandae? Facere non rem voluptatibus optio quam in laboriosam eius voluptatum tempora?</p>
   </section>
 
-  <section class="blue5">
-    <h1>Title</h1>
-    <p>Totam porro iure aut. Exercitationem harum corrupti animi vitae accusamus architecto assumenda sapiente nihil maiores! Eum, soluta odit, totam vitae deleniti cum unde labore atque minus, a voluptatibus earum quasi.</p>
-  </section>
+  <div class="spacer transition4"></div>
 
+  <section class="bg5 links">
+    <h3>Links</h3>
+    <!-- Social Media Icons by NiftyButtons https://niftybuttons.com -->
+    <div style="display: flex; flex-wrap:wrap; align-items: center; justify-content: center;"><a href="true" target="https://github.com/An-20" rel="noopener noreferrer" style="text-decoration:none;border:0;width:36px;height:36px;padding:2px;margin:5px;color:#ffffff;border-radius:50%;background-color:#0d2744;"><svg class="niftybutton-github" style="display:block;fill:currentColor" data-donate="true" data-tag="git" data-name="Github" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><title>Github social icon</title>
+      <path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path>
+    </svg></a></div>
+  </section>
 </body>
 
 <script>
 
   /* Yes I do know JS identifier names are supposed to be camelcase 
-  But I come from a mostly Python background so.... */
+  But I come from a mostly Python background so.... (i wrote this when i was 14 lol)*/
 
   function typeText(){
     var element = document.getElementById('title-text');
@@ -111,8 +168,10 @@
     var lines = [
       "Hello, I am An-20",
       "Python programmer",
-      "Web developer",
-      "Secondary school student"
+      "Developer / Maker",
+      "Secondary school student",
+      "",
+      "Here's some stuff I've made:"
     ];
     var total_length = lines.join("").length + 1  // add one so cursor is on newline
     var cursor_counter = 0;  // keep cursor on ofr only half of time

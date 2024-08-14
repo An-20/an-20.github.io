@@ -74,7 +74,7 @@
       width: 90vw;
 
       position: absolute;
-      top: 8vh;
+      top: 7vh;
 
       border-radius: 10px;
     }
@@ -85,8 +85,8 @@
 
     #homelink {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 8px;
+      left: 8px;
 
       font-size: 20px;
       text-decoration: underline;
@@ -96,7 +96,7 @@
     #status {
       width: 100%;
       position: absolute;
-      bottom: 0px;
+      top: 0px;
       left: 0px;
       z-index: 1000;
       background-color: #202020;
@@ -126,7 +126,7 @@
 </body>
 
 <script>
-    var map = L.map('map').setView([50.72452, -3.52802], 15);
+    var map = L.map('map', {zoomControl: false, attributionControl: false}).setView([50.72452, -3.52802], 15);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
